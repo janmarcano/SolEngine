@@ -1,0 +1,32 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path="res://.import/_02_trees and bushes.png-085992dea22012b8bb7b69df3c5a0c23.stex"
+
+[deps]
+
+source_file="res://_02_trees and bushes.png"
+source_md5="baea3fae20ca3074924d475b06a4770f"
+
+dest_files=[ "res://.import/_02_trees and bushes.png-085992dea22012b8bb7b69df3c5a0c23.stex" ]
+dest_md5="0c026b43edbe428e3ec65c9ccecedf57"
+
+[params]
+
+compress/mode=0
+compress/lossy_quality=0.7
+compress/hdr_mode=0
+compress/normal_map=0
+flags/repeat=0
+flags/filter=true
+flags/mipmaps=false
+flags/anisotropic=false
+flags/srgb=2
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+stream=false
+size_limit=0
+detect_3d=true
+svg/scale=1.0

@@ -12,9 +12,10 @@ export var intro_movement_duration = 0.5
 var tween
 
 func _ready():
-	tween = Tween.new()
-	add_child(tween)
-	modulate = Color(1, 1, 1, 0)
+	if not Engine.editor_hint:
+		tween = Tween.new()
+		add_child(tween)
+		modulate = Color(1, 1, 1, 0)
 	pass
 
 func motion():

@@ -1,9 +1,8 @@
 tool
 extends "panel_content.gd"
 
-const ParallaxContent = preload("parallax_content.gd")
+const ParallaxContent = preload("parallax_content_layer.gd")
 
-var parent
 var container
 var viewport
 var camera
@@ -46,15 +45,12 @@ func init():
 	viewport.add_child(background)
 	container.add_child(viewport)
 	add_child(container)
-	motion()
 	set_process(true)
 
 func motion():
 	var goal_pos = camera.position
 	var from_pos = camera.position - intro_movement_distance
-	print(from_pos)
 	tween.interpolate_property(camera, "position", from_pos, goal_pos, intro_movement_duration, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
-	print(camera.position)
 	opacity_motion()
 	tween.start()
 #	pass

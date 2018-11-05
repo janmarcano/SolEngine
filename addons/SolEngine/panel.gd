@@ -1,5 +1,36 @@
 #tool
-extends Polygon2D
+extends Control
+
+# Class imports
+onready var PanelContent = preload("panel_content.gd")
+
+# Internal vars
+var contents = []
+var current_content = 0
+
+# Signals
+signal ended
 
 func _ready():
+	if get_child_count() == 0:
+		OS.alert("Configuration warning: ComicPanel")
+		print("Configuration warning: ComicPanel")
+		return
+	for p in get_children():
+		if not p is ComicPanel:
+			# TODO: show configuration warning
+			OS.alert("Configuration warning: ComicPanel")
+			print("Configuration warning: ComicPanel")
+			break
+#		p.hide()
+		contents.push_back(p)
+#	_on_ComicPanel_ended()
+	set_process(true)
+
+func _process(delta):
+	if Input.is_action_just_pressed("ui_accept"):
+		advance()
+
+func advance():
+	
 	pass

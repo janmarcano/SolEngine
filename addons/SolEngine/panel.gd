@@ -9,7 +9,7 @@ var contents = []
 var current_content = 0
 
 # Signals
-signal ended
+signal done
 
 func _ready():
 	if get_child_count() == 0:
@@ -17,7 +17,7 @@ func _ready():
 		print("Configuration warning: ComicPanel")
 		return
 	for p in get_children():
-		if not p is ComicPanel:
+		if not p is PanelContent:
 			# TODO: show configuration warning
 			OS.alert("Configuration warning: ComicPanel")
 			print("Configuration warning: ComicPanel")

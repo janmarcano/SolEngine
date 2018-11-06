@@ -12,6 +12,8 @@ export var intro_movement_duration = 0.5
 var tween
 var tweens_to_completion
 
+signal done
+
 func _ready():
 	if not Engine.editor_hint:
 		init()
@@ -41,5 +43,7 @@ func _on_preview(_preview):
 func _on_tween_completed(object, key):
 	tweens_to_completion -= 1
 	if tweens_to_completion == 0:
-		print('completion!')
-		preview = false
+		if (preview):
+			preview = false
+		else:
+			emit("done")

@@ -81,13 +81,16 @@ size_flags_horizontal = 1
 size_flags_vertical = 1
 stretch_mode = 0
 script = ExtResource( 4 )
+_sections_unfolded = [ "Rect" ]
 __meta__ = {
 "_editor_icon": ExtResource( 1 )
 }
 preview = false
-fade_in_duration = 0.5
-intro_movement_distance = Vector2( 0, 0 )
-intro_movement_duration = 0.5
+fade_in_duration = 5.0
+movement_duration = 5.0
+movement_relative_initial_position = Vector2( 0, -50 )
+scaling_duration = 5.0
+relative_initial_scale = Vector2( 2, 2 )
 
 [node name="Polygon2D" type="Polygon2D" parent="ComicPage/ComicPanel/PanelContent" index="0"]
 
@@ -125,8 +128,10 @@ __meta__ = {
 }
 preview = false
 fade_in_duration = 2.0
-intro_movement_distance = Vector2( 0, 150 )
-intro_movement_duration = 4.0
+movement_duration = 4.0
+movement_relative_initial_position = Vector2( 0, 150 )
+scaling_duration = 0.25
+relative_initial_scale = Vector2( 1, 1 )
 
 [node name="ParallaxContent3" type="TextureRect" parent="ComicPage/ComicPanel/ParallaxPanelContent" index="0"]
 

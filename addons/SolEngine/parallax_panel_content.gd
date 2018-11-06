@@ -47,11 +47,12 @@ func init():
 	add_child(container)
 	set_process(true)
 
-func motion():
-	var goal_pos = camera.position
-	var from_pos = camera.position - intro_movement_distance
-	tween.interpolate_property(camera, "position", from_pos, goal_pos, intro_movement_duration, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
-	opacity_motion()
-	tween.start()
-#	pass
+func scale_motion():
+	var goal_zoom = camera.zoom
+	var initial_zoom = camera.zoom * relative_initial_scale
+	tween.interpolate_property(camera, "zoom", initial_zoom, goal_zoom, scaling_duration, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
 
+func position_motion():
+	var goal_position = camera.position
+	var initial_position = camera.position + movement_relative_initial_position
+	tween.interpolate_property(camera, "position", initial_position, goal_position, movement_duration, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)

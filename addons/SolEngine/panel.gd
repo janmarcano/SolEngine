@@ -32,5 +32,5 @@ func _process(delta):
 		advance()
 
 func advance():
-	
+
 	pass

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/_04_bushes.png-539cf5109a70614b4f0593297973047d.stex"
+path="res://.import/_07_huge_clouds.png-469bde8109661f68be14cf1079446d98.stex"
 
 [deps]
 
-source_file="res://_04_bushes.png"
-source_md5="a9681a674d2f7db7a83d2d05b8ca978b"
+source_file="res://projects/test/_07_huge_clouds.png"
+source_md5="367537d31f348c274016605d95fe2fc3"
 
-dest_files=[ "res://.import/_04_bushes.png-539cf5109a70614b4f0593297973047d.stex" ]
-dest_md5="d78417e418febd9df343f16f23fdf05a"
+dest_files=[ "res://.import/_07_huge_clouds.png-469bde8109661f68be14cf1079446d98.stex" ]
+dest_md5="63310dd6a14cf5a8f9d2675c989f4f47"
 
 [params]
 

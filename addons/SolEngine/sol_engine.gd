@@ -12,22 +12,23 @@ var pages = []
 var current_page
 
 func _ready():
-	self.get_rect().size = get_viewport().get_size()
-	if get_child_count() == 0:
-		OS.alert("Configuration warning: SolEngine")
-		print("Configuration warning: SolEngine")
-		return
-	for p in get_children():
-		if not p is ComicPage:
-			# TODO: show configuration warning
+	if not Engine.editor_hint:
+		self.get_rect().size = get_viewport().get_size()
+		if get_child_count() == 0:
 			OS.alert("Configuration warning: SolEngine")
 			print("Configuration warning: SolEngine")
-			break
-		p.hide()
-		self.connect("ended", p, "_on_ComicPage_ended")
-		pages.push_back(p)
-	_on_ComicPage_ended()
-	set_process(true)
+			return
+		for p in get_children():
+			if not p is ComicPage:
+				# TODO: show configuration warning
+				OS.alert("Configuration warning: SolEngine")
+				print("Configuration warning: SolEngine")
+				break
+			p.hide()
+			self.connect("ended", p, "_on_ComicPage_ended")
+			pages.push_back(p)
+		_on_ComicPage_ended()
+		set_process(true)
 
 func _process(delta):
 	if Engine.editor_hint:

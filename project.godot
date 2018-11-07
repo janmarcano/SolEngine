@@ -11,7 +11,7 @@ config_version=3
 [application]
 
 config/name="Luminas - The Darkest Night - Prologue"
-run/main_scene="res://test.tscn"
+run/main_scene="res://projects/test/test.tscn"
 config/icon="res://icon.png"
 
 [display]

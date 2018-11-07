@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/_05_hill1.png-9909bf479d0d0777d18d3c8cac599866.stex"
+path="res://.import/_11_background.png-834a86e0e211fc0f1ea1fce549849497.stex"
 
 [deps]
 
-source_file="res://_05_hill1.png"
-source_md5="161eb7a5fcb689c3f43fe33ded4d3cfc"
+source_file="res://projects/test/_11_background.png"
+source_md5="ab5ea0f059d73f3487cd87e3e078b220"
 
-dest_files=[ "res://.import/_05_hill1.png-9909bf479d0d0777d18d3c8cac599866.stex" ]
-dest_md5="3e40bee5b155aa253f7ceecff48f5ca7"
+dest_files=[ "res://.import/_11_background.png-834a86e0e211fc0f1ea1fce549849497.stex" ]
+dest_md5="4a8a0629f0cdb52c48d2e7f8bc4d5ab9"
 
 [params]
 

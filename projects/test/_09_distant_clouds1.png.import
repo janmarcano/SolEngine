@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/_01_ground.png-05a9c2f4d76827f638dee58326c88c34.stex"
+path="res://.import/_09_distant_clouds1.png-059a4db34b977bead388e6120faf15b3.stex"
 
 [deps]
 
-source_file="res://_01_ground.png"
-source_md5="121b6d781adc504e5ade4fe3cd50639b"
+source_file="res://projects/test/_09_distant_clouds1.png"
+source_md5="610356848e2e0d0f65bfbf72dfbf7d63"
 
-dest_files=[ "res://.import/_01_ground.png-05a9c2f4d76827f638dee58326c88c34.stex" ]
-dest_md5="63e7176c481356c29eac63e15239d6cd"
+dest_files=[ "res://.import/_09_distant_clouds1.png-059a4db34b977bead388e6120faf15b3.stex" ]
+dest_md5="f842100e88cce37fa11ac7c059458a0f"
 
 [params]
 

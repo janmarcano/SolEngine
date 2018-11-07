@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/_02_trees and bushes.png-085992dea22012b8bb7b69df3c5a0c23.stex"
+path="res://.import/_03_distant_trees.png-0ed3910e495dd5c0f10f02a88f937f8c.stex"
 
 [deps]
 
-source_file="res://_02_trees and bushes.png"
-source_md5="baea3fae20ca3074924d475b06a4770f"
+source_file="res://projects/test/_03_distant_trees.png"
+source_md5="55b346b1bc3e5134b6d304f99ce76791"
 
-dest_files=[ "res://.import/_02_trees and bushes.png-085992dea22012b8bb7b69df3c5a0c23.stex" ]
-dest_md5="0c026b43edbe428e3ec65c9ccecedf57"
+dest_files=[ "res://.import/_03_distant_trees.png-0ed3910e495dd5c0f10f02a88f937f8c.stex" ]
+dest_md5="77fe1d7203cdd7ff0a241a505f3f10df"
 
 [params]
 

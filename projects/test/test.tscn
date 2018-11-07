@@ -1,14 +1,15 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
-[ext_resource path="res://addons/SolEngine/icon.png" type="Texture" id=1]
-[ext_resource path="res://addons/SolEngine/page.gd" type="Script" id=2]
-[ext_resource path="res://addons/SolEngine/panel.gd" type="Script" id=3]
-[ext_resource path="res://addons/SolEngine/panel_content.gd" type="Script" id=4]
-[ext_resource path="res://addons/SolEngine/parallax_panel_content.gd" type="Script" id=5]
-[ext_resource path="res://projects/test/_08_clouds.png" type="Texture" id=6]
-[ext_resource path="res://addons/SolEngine/parallax_content_layer.gd" type="Script" id=7]
-[ext_resource path="res://projects/test/_05_hill1.png" type="Texture" id=8]
-[ext_resource path="res://projects/test/_02_trees and bushes.png" type="Texture" id=9]
+[ext_resource path="res://addons/SolEngine/sol_engine.gd" type="Script" id=1]
+[ext_resource path="res://addons/SolEngine/icon.png" type="Texture" id=2]
+[ext_resource path="res://addons/SolEngine/page.gd" type="Script" id=3]
+[ext_resource path="res://addons/SolEngine/panel.gd" type="Script" id=4]
+[ext_resource path="res://addons/SolEngine/panel_content.gd" type="Script" id=5]
+[ext_resource path="res://addons/SolEngine/parallax_panel_content.gd" type="Script" id=6]
+[ext_resource path="res://projects/test/_08_clouds.png" type="Texture" id=7]
+[ext_resource path="res://addons/SolEngine/parallax_content_layer.gd" type="Script" id=8]
+[ext_resource path="res://projects/test/_05_hill1.png" type="Texture" id=9]
+[ext_resource path="res://projects/test/_02_trees and bushes.png" type="Texture" id=10]
 
 [node name="Test" type="Control" index="0"]
 
@@ -19,14 +20,17 @@ anchor_bottom = 1.0
 margin_right = -920.0
 margin_bottom = -500.0
 rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
 mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 3
 size_flags_vertical = 3
+script = ExtResource( 1 )
 _sections_unfolded = [ "Anchor", "Margin", "Rect" ]
 __meta__ = {
-"_editor_icon": ExtResource( 1 )
+"_editor_icon": ExtResource( 2 )
 }
+advance_action = "ui_accept"
 
 [node name="ComicPage" type="Control" parent="." index="0"]
 
@@ -37,17 +41,19 @@ anchor_bottom = 0.0
 margin_right = 40.0
 margin_bottom = 40.0
 rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
 mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-script = ExtResource( 2 )
+script = ExtResource( 3 )
 __meta__ = {
-"_editor_icon": ExtResource( 1 )
+"_editor_icon": ExtResource( 2 )
 }
 
 [node name="ComicPanel" type="Control" parent="ComicPage" index="0"]
 
+editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -55,13 +61,14 @@ anchor_bottom = 0.0
 margin_right = 40.0
 margin_bottom = 40.0
 rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
 mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-script = ExtResource( 3 )
+script = ExtResource( 4 )
 __meta__ = {
-"_editor_icon": ExtResource( 1 )
+"_editor_icon": ExtResource( 2 )
 }
 
 [node name="PanelContent" type="TextureRect" parent="ComicPage/ComicPanel" index="0"]
@@ -75,15 +82,16 @@ margin_top = 129.0
 margin_right = 153.0
 margin_bottom = 169.0
 rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
 mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 stretch_mode = 0
-script = ExtResource( 4 )
+script = ExtResource( 5 )
 _sections_unfolded = [ "Rect" ]
 __meta__ = {
-"_editor_icon": ExtResource( 1 )
+"_editor_icon": ExtResource( 2 )
 }
 preview = false
 fade_in_duration = 1.0
@@ -122,14 +130,14 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-script = ExtResource( 5 )
+script = ExtResource( 6 )
 _sections_unfolded = [ "Anchor", "Focus", "Grow Direction", "Hint", "Margin", "Mouse", "Rect", "Size Flags", "Theme", "Visibility" ]
 __meta__ = {
-"_editor_icon": ExtResource( 1 )
+"_editor_icon": ExtResource( 2 )
 }
 preview = false
-fade_in_duration = 2.0
-movement_duration = 4.0
+fade_in_duration = 0.5
+movement_duration = 1.5
 movement_relative_initial_position = Vector2( 0, 150 )
 scaling_duration = 0.25
 relative_initial_scale = Vector2( 1, 1 )
@@ -146,16 +154,17 @@ margin_right = 1911.0
 margin_bottom = 1582.0
 rect_scale = Vector2( 0.25, 0.25 )
 rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
 mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 6 )
+texture = ExtResource( 7 )
 stretch_mode = 0
-script = ExtResource( 7 )
+script = ExtResource( 8 )
 _sections_unfolded = [ "Rect" ]
 __meta__ = {
-"_editor_icon": ExtResource( 1 )
+"_editor_icon": ExtResource( 2 )
 }
 parallax_scale = Vector2( 1, 0.2 )
 
@@ -171,16 +180,17 @@ margin_right = 1910.0
 margin_bottom = 1434.0
 rect_scale = Vector2( 0.25, 0.25 )
 rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
 mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 8 )
+texture = ExtResource( 9 )
 stretch_mode = 0
-script = ExtResource( 7 )
+script = ExtResource( 8 )
 _sections_unfolded = [ "Rect" ]
 __meta__ = {
-"_editor_icon": ExtResource( 1 )
+"_editor_icon": ExtResource( 2 )
 }
 parallax_scale = Vector2( 1, 0.5 )
 
@@ -196,16 +206,891 @@ margin_right = 1912.0
 margin_bottom = 1503.0
 rect_scale = Vector2( 0.25, 0.25 )
 rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 10 )
+stretch_mode = 0
+script = ExtResource( 8 )
+_sections_unfolded = [ "Focus", "Hint", "Mouse", "Rect", "Size Flags", "Visibility" ]
+__meta__ = {
+"_editor_icon": ExtResource( 2 )
+}
+parallax_scale = Vector2( 1, 1 )
+
+[node name="ComicPanel2" type="Control" parent="ComicPage" index="1"]
+
+editor/display_folded = true
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 675.0
+margin_top = 3.0
+margin_right = 715.0
+margin_bottom = 43.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+script = ExtResource( 4 )
+__meta__ = {
+"_editor_icon": ExtResource( 2 )
+}
+
+[node name="PanelContent" type="TextureRect" parent="ComicPage/ComicPanel2" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 113.0
+margin_top = 129.0
+margin_right = 153.0
+margin_bottom = 169.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+stretch_mode = 0
+script = ExtResource( 5 )
+_sections_unfolded = [ "Rect" ]
+__meta__ = {
+"_editor_icon": ExtResource( 2 )
+}
+preview = false
+fade_in_duration = 1.0
+movement_duration = 1.0
+movement_relative_initial_position = Vector2( 0, -50 )
+scaling_duration = 1.0
+relative_initial_scale = Vector2( 0.5, 0.5 )
+
+[node name="Polygon2D" type="Polygon2D" parent="ComicPage/ComicPanel2/PanelContent" index="0"]
+
+position = Vector2( -134.473, -151.62 )
+polygon = PoolVector2Array( 10.3104, 44.9108, 18.3462, 325.778, 297.223, 346.184, 301.304, 6.09023 )
+uv = PoolVector2Array(  )
+color = Color( 1, 1, 1, 1 )
+vertex_colors = PoolColorArray(  )
+offset = Vector2( 0, 0 )
+antialiased = true
+texture = null
+texture_offset = Vector2( 0, 0 )
+texture_scale = Vector2( 1, 1 )
+texture_rotation_degrees = 0.0
+invert_enable = false
+invert_border = 100.0
+
+[node name="ParallaxPanelContent" type="Control" parent="ComicPage/ComicPanel2" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = 237.0
+margin_bottom = 244.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = true
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+script = ExtResource( 6 )
+_sections_unfolded = [ "Anchor", "Focus", "Grow Direction", "Hint", "Margin", "Mouse", "Rect", "Size Flags", "Theme", "Visibility" ]
+__meta__ = {
+"_editor_icon": ExtResource( 2 )
+}
+preview = false
+fade_in_duration = 0.5
+movement_duration = 1.5
+movement_relative_initial_position = Vector2( 0, 150 )
+scaling_duration = 0.25
+relative_initial_scale = Vector2( 1, 1 )
+
+[node name="ParallaxContent3" type="TextureRect" parent="ComicPage/ComicPanel2/ParallaxPanelContent" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -137.0
+margin_top = 36.0
+margin_right = 1911.0
+margin_bottom = 1582.0
+rect_scale = Vector2( 0.25, 0.25 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 7 )
+stretch_mode = 0
+script = ExtResource( 8 )
+_sections_unfolded = [ "Rect" ]
+__meta__ = {
+"_editor_icon": ExtResource( 2 )
+}
+parallax_scale = Vector2( 1, 0.2 )
+
+[node name="ParallaxContent2" type="TextureRect" parent="ComicPage/ComicPanel2/ParallaxPanelContent" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -138.0
+margin_top = -112.0
+margin_right = 1910.0
+margin_bottom = 1434.0
+rect_scale = Vector2( 0.25, 0.25 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
 mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 texture = ExtResource( 9 )
 stretch_mode = 0
-script = ExtResource( 7 )
+script = ExtResource( 8 )
+_sections_unfolded = [ "Rect" ]
+__meta__ = {
+"_editor_icon": ExtResource( 2 )
+}
+parallax_scale = Vector2( 1, 0.5 )
+
+[node name="ParallaxContent" type="TextureRect" parent="ComicPage/ComicPanel2/ParallaxPanelContent" index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -136.0
+margin_top = -43.0
+margin_right = 1912.0
+margin_bottom = 1503.0
+rect_scale = Vector2( 0.25, 0.25 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 10 )
+stretch_mode = 0
+script = ExtResource( 8 )
 _sections_unfolded = [ "Focus", "Hint", "Mouse", "Rect", "Size Flags", "Visibility" ]
 __meta__ = {
-"_editor_icon": ExtResource( 1 )
+"_editor_icon": ExtResource( 2 )
+}
+parallax_scale = Vector2( 1, 1 )
+
+[node name="ComicPanel3" type="Control" parent="ComicPage" index="2"]
+
+editor/display_folded = true
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 324.0
+margin_top = 216.0
+margin_right = 364.0
+margin_bottom = 256.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+script = ExtResource( 4 )
+__meta__ = {
+"_editor_icon": ExtResource( 2 )
+}
+
+[node name="PanelContent" type="TextureRect" parent="ComicPage/ComicPanel3" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 113.0
+margin_top = 129.0
+margin_right = 153.0
+margin_bottom = 169.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+stretch_mode = 0
+script = ExtResource( 5 )
+_sections_unfolded = [ "Rect" ]
+__meta__ = {
+"_editor_icon": ExtResource( 2 )
+}
+preview = false
+fade_in_duration = 1.0
+movement_duration = 1.0
+movement_relative_initial_position = Vector2( 0, -50 )
+scaling_duration = 1.0
+relative_initial_scale = Vector2( 0.5, 0.5 )
+
+[node name="Polygon2D" type="Polygon2D" parent="ComicPage/ComicPanel3/PanelContent" index="0"]
+
+position = Vector2( -134.473, -151.62 )
+polygon = PoolVector2Array( 10.3104, 44.9108, 18.3462, 325.778, 297.223, 346.184, 301.304, 6.09023 )
+uv = PoolVector2Array(  )
+color = Color( 1, 1, 1, 1 )
+vertex_colors = PoolColorArray(  )
+offset = Vector2( 0, 0 )
+antialiased = true
+texture = null
+texture_offset = Vector2( 0, 0 )
+texture_scale = Vector2( 1, 1 )
+texture_rotation_degrees = 0.0
+invert_enable = false
+invert_border = 100.0
+
+[node name="ParallaxPanelContent" type="Control" parent="ComicPage/ComicPanel3" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = 237.0
+margin_bottom = 244.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = true
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+script = ExtResource( 6 )
+_sections_unfolded = [ "Anchor", "Focus", "Grow Direction", "Hint", "Margin", "Mouse", "Rect", "Size Flags", "Theme", "Visibility" ]
+__meta__ = {
+"_editor_icon": ExtResource( 2 )
+}
+preview = false
+fade_in_duration = 0.5
+movement_duration = 1.5
+movement_relative_initial_position = Vector2( 0, 150 )
+scaling_duration = 0.25
+relative_initial_scale = Vector2( 1, 1 )
+
+[node name="ParallaxContent3" type="TextureRect" parent="ComicPage/ComicPanel3/ParallaxPanelContent" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -137.0
+margin_top = 36.0
+margin_right = 1911.0
+margin_bottom = 1582.0
+rect_scale = Vector2( 0.25, 0.25 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 7 )
+stretch_mode = 0
+script = ExtResource( 8 )
+_sections_unfolded = [ "Rect" ]
+__meta__ = {
+"_editor_icon": ExtResource( 2 )
+}
+parallax_scale = Vector2( 1, 0.2 )
+
+[node name="ParallaxContent2" type="TextureRect" parent="ComicPage/ComicPanel3/ParallaxPanelContent" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -138.0
+margin_top = -112.0
+margin_right = 1910.0
+margin_bottom = 1434.0
+rect_scale = Vector2( 0.25, 0.25 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 9 )
+stretch_mode = 0
+script = ExtResource( 8 )
+_sections_unfolded = [ "Rect" ]
+__meta__ = {
+"_editor_icon": ExtResource( 2 )
+}
+parallax_scale = Vector2( 1, 0.5 )
+
+[node name="ParallaxContent" type="TextureRect" parent="ComicPage/ComicPanel3/ParallaxPanelContent" index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -136.0
+margin_top = -43.0
+margin_right = 1912.0
+margin_bottom = 1503.0
+rect_scale = Vector2( 0.25, 0.25 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 10 )
+stretch_mode = 0
+script = ExtResource( 8 )
+_sections_unfolded = [ "Focus", "Hint", "Mouse", "Rect", "Size Flags", "Visibility" ]
+__meta__ = {
+"_editor_icon": ExtResource( 2 )
+}
+parallax_scale = Vector2( 1, 1 )
+
+[node name="ComicPage2" type="Control" parent="." index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 40.0
+margin_bottom = 40.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+script = ExtResource( 3 )
+__meta__ = {
+"_editor_icon": ExtResource( 2 )
+}
+
+[node name="ComicPanel" type="Control" parent="ComicPage2" index="0"]
+
+editor/display_folded = true
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 345.0
+margin_top = -24.0
+margin_right = 385.0
+margin_bottom = 16.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+script = ExtResource( 4 )
+__meta__ = {
+"_editor_icon": ExtResource( 2 )
+}
+
+[node name="PanelContent" type="TextureRect" parent="ComicPage2/ComicPanel" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 113.0
+margin_top = 129.0
+margin_right = 153.0
+margin_bottom = 169.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+stretch_mode = 0
+script = ExtResource( 5 )
+_sections_unfolded = [ "Rect" ]
+__meta__ = {
+"_editor_icon": ExtResource( 2 )
+}
+preview = false
+fade_in_duration = 1.0
+movement_duration = 1.0
+movement_relative_initial_position = Vector2( 0, -50 )
+scaling_duration = 1.0
+relative_initial_scale = Vector2( 0.5, 0.5 )
+
+[node name="Polygon2D" type="Polygon2D" parent="ComicPage2/ComicPanel/PanelContent" index="0"]
+
+position = Vector2( -134.473, -151.62 )
+polygon = PoolVector2Array( 10.3104, 44.9108, 18.3462, 325.778, 297.223, 346.184, 301.304, 6.09023 )
+uv = PoolVector2Array(  )
+color = Color( 1, 1, 1, 1 )
+vertex_colors = PoolColorArray(  )
+offset = Vector2( 0, 0 )
+antialiased = true
+texture = null
+texture_offset = Vector2( 0, 0 )
+texture_scale = Vector2( 1, 1 )
+texture_rotation_degrees = 0.0
+invert_enable = false
+invert_border = 100.0
+
+[node name="ParallaxPanelContent" type="Control" parent="ComicPage2/ComicPanel" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = 237.0
+margin_bottom = 244.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = true
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+script = ExtResource( 6 )
+_sections_unfolded = [ "Anchor", "Focus", "Grow Direction", "Hint", "Margin", "Mouse", "Rect", "Size Flags", "Theme", "Visibility" ]
+__meta__ = {
+"_editor_icon": ExtResource( 2 )
+}
+preview = false
+fade_in_duration = 0.5
+movement_duration = 1.5
+movement_relative_initial_position = Vector2( 0, 150 )
+scaling_duration = 0.25
+relative_initial_scale = Vector2( 1, 1 )
+
+[node name="ParallaxContent3" type="TextureRect" parent="ComicPage2/ComicPanel/ParallaxPanelContent" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -137.0
+margin_top = 36.0
+margin_right = 1911.0
+margin_bottom = 1582.0
+rect_scale = Vector2( 0.25, 0.25 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 7 )
+stretch_mode = 0
+script = ExtResource( 8 )
+_sections_unfolded = [ "Rect" ]
+__meta__ = {
+"_editor_icon": ExtResource( 2 )
+}
+parallax_scale = Vector2( 1, 0.2 )
+
+[node name="ParallaxContent2" type="TextureRect" parent="ComicPage2/ComicPanel/ParallaxPanelContent" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -138.0
+margin_top = -112.0
+margin_right = 1910.0
+margin_bottom = 1434.0
+rect_scale = Vector2( 0.25, 0.25 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 9 )
+stretch_mode = 0
+script = ExtResource( 8 )
+_sections_unfolded = [ "Rect" ]
+__meta__ = {
+"_editor_icon": ExtResource( 2 )
+}
+parallax_scale = Vector2( 1, 0.5 )
+
+[node name="ParallaxContent" type="TextureRect" parent="ComicPage2/ComicPanel/ParallaxPanelContent" index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -136.0
+margin_top = -43.0
+margin_right = 1912.0
+margin_bottom = 1503.0
+rect_scale = Vector2( 0.25, 0.25 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 10 )
+stretch_mode = 0
+script = ExtResource( 8 )
+_sections_unfolded = [ "Focus", "Hint", "Mouse", "Rect", "Size Flags", "Visibility" ]
+__meta__ = {
+"_editor_icon": ExtResource( 2 )
+}
+parallax_scale = Vector2( 1, 1 )
+
+[node name="ComicPanel2" type="Control" parent="ComicPage2" index="1"]
+
+editor/display_folded = true
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 15.0
+margin_top = 207.0
+margin_right = 55.0
+margin_bottom = 247.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+script = ExtResource( 4 )
+__meta__ = {
+"_editor_icon": ExtResource( 2 )
+}
+
+[node name="PanelContent" type="TextureRect" parent="ComicPage2/ComicPanel2" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 113.0
+margin_top = 129.0
+margin_right = 153.0
+margin_bottom = 169.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+stretch_mode = 0
+script = ExtResource( 5 )
+_sections_unfolded = [ "Rect" ]
+__meta__ = {
+"_editor_icon": ExtResource( 2 )
+}
+preview = false
+fade_in_duration = 1.0
+movement_duration = 1.0
+movement_relative_initial_position = Vector2( 0, -50 )
+scaling_duration = 1.0
+relative_initial_scale = Vector2( 0.5, 0.5 )
+
+[node name="Polygon2D" type="Polygon2D" parent="ComicPage2/ComicPanel2/PanelContent" index="0"]
+
+position = Vector2( -134.473, -151.62 )
+polygon = PoolVector2Array( 10.3104, 44.9108, 18.3462, 325.778, 297.223, 346.184, 301.304, 6.09023 )
+uv = PoolVector2Array(  )
+color = Color( 1, 1, 1, 1 )
+vertex_colors = PoolColorArray(  )
+offset = Vector2( 0, 0 )
+antialiased = true
+texture = null
+texture_offset = Vector2( 0, 0 )
+texture_scale = Vector2( 1, 1 )
+texture_rotation_degrees = 0.0
+invert_enable = false
+invert_border = 100.0
+
+[node name="ParallaxPanelContent" type="Control" parent="ComicPage2/ComicPanel2" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = 237.0
+margin_bottom = 244.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = true
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+script = ExtResource( 6 )
+_sections_unfolded = [ "Anchor", "Focus", "Grow Direction", "Hint", "Margin", "Mouse", "Rect", "Size Flags", "Theme", "Visibility" ]
+__meta__ = {
+"_editor_icon": ExtResource( 2 )
+}
+preview = false
+fade_in_duration = 0.5
+movement_duration = 1.5
+movement_relative_initial_position = Vector2( 0, 150 )
+scaling_duration = 0.25
+relative_initial_scale = Vector2( 1, 1 )
+
+[node name="ParallaxContent3" type="TextureRect" parent="ComicPage2/ComicPanel2/ParallaxPanelContent" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -137.0
+margin_top = 36.0
+margin_right = 1911.0
+margin_bottom = 1582.0
+rect_scale = Vector2( 0.25, 0.25 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 7 )
+stretch_mode = 0
+script = ExtResource( 8 )
+_sections_unfolded = [ "Rect" ]
+__meta__ = {
+"_editor_icon": ExtResource( 2 )
+}
+parallax_scale = Vector2( 1, 0.2 )
+
+[node name="ParallaxContent2" type="TextureRect" parent="ComicPage2/ComicPanel2/ParallaxPanelContent" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -138.0
+margin_top = -112.0
+margin_right = 1910.0
+margin_bottom = 1434.0
+rect_scale = Vector2( 0.25, 0.25 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 9 )
+stretch_mode = 0
+script = ExtResource( 8 )
+_sections_unfolded = [ "Rect" ]
+__meta__ = {
+"_editor_icon": ExtResource( 2 )
+}
+parallax_scale = Vector2( 1, 0.5 )
+
+[node name="ParallaxContent" type="TextureRect" parent="ComicPage2/ComicPanel2/ParallaxPanelContent" index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -136.0
+margin_top = -43.0
+margin_right = 1912.0
+margin_bottom = 1503.0
+rect_scale = Vector2( 0.25, 0.25 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 10 )
+stretch_mode = 0
+script = ExtResource( 8 )
+_sections_unfolded = [ "Focus", "Hint", "Mouse", "Rect", "Size Flags", "Visibility" ]
+__meta__ = {
+"_editor_icon": ExtResource( 2 )
+}
+parallax_scale = Vector2( 1, 1 )
+
+[node name="ComicPanel3" type="Control" parent="ComicPage2" index="2"]
+
+editor/display_folded = true
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 672.0
+margin_top = 212.0
+margin_right = 712.0
+margin_bottom = 252.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+script = ExtResource( 4 )
+__meta__ = {
+"_editor_icon": ExtResource( 2 )
+}
+
+[node name="PanelContent" type="TextureRect" parent="ComicPage2/ComicPanel3" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 113.0
+margin_top = 129.0
+margin_right = 153.0
+margin_bottom = 169.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+stretch_mode = 0
+script = ExtResource( 5 )
+_sections_unfolded = [ "Rect" ]
+__meta__ = {
+"_editor_icon": ExtResource( 2 )
+}
+preview = false
+fade_in_duration = 1.0
+movement_duration = 1.0
+movement_relative_initial_position = Vector2( 0, -50 )
+scaling_duration = 1.0
+relative_initial_scale = Vector2( 0.5, 0.5 )
+
+[node name="Polygon2D" type="Polygon2D" parent="ComicPage2/ComicPanel3/PanelContent" index="0"]
+
+position = Vector2( -134.473, -151.62 )
+polygon = PoolVector2Array( 10.3104, 44.9108, 18.3462, 325.778, 297.223, 346.184, 301.304, 6.09023 )
+uv = PoolVector2Array(  )
+color = Color( 1, 1, 1, 1 )
+vertex_colors = PoolColorArray(  )
+offset = Vector2( 0, 0 )
+antialiased = true
+texture = null
+texture_offset = Vector2( 0, 0 )
+texture_scale = Vector2( 1, 1 )
+texture_rotation_degrees = 0.0
+invert_enable = false
+invert_border = 100.0
+
+[node name="ParallaxPanelContent" type="Control" parent="ComicPage2/ComicPanel3" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = 237.0
+margin_bottom = 244.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = true
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+script = ExtResource( 6 )
+_sections_unfolded = [ "Anchor", "Focus", "Grow Direction", "Hint", "Margin", "Mouse", "Rect", "Size Flags", "Theme", "Visibility" ]
+__meta__ = {
+"_editor_icon": ExtResource( 2 )
+}
+preview = false
+fade_in_duration = 0.5
+movement_duration = 1.5
+movement_relative_initial_position = Vector2( 0, 150 )
+scaling_duration = 0.25
+relative_initial_scale = Vector2( 1, 1 )
+
+[node name="ParallaxContent3" type="TextureRect" parent="ComicPage2/ComicPanel3/ParallaxPanelContent" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -137.0
+margin_top = 36.0
+margin_right = 1911.0
+margin_bottom = 1582.0
+rect_scale = Vector2( 0.25, 0.25 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 7 )
+stretch_mode = 0
+script = ExtResource( 8 )
+_sections_unfolded = [ "Rect" ]
+__meta__ = {
+"_editor_icon": ExtResource( 2 )
+}
+parallax_scale = Vector2( 1, 0.2 )
+
+[node name="ParallaxContent2" type="TextureRect" parent="ComicPage2/ComicPanel3/ParallaxPanelContent" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -138.0
+margin_top = -112.0
+margin_right = 1910.0
+margin_bottom = 1434.0
+rect_scale = Vector2( 0.25, 0.25 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 9 )
+stretch_mode = 0
+script = ExtResource( 8 )
+_sections_unfolded = [ "Rect" ]
+__meta__ = {
+"_editor_icon": ExtResource( 2 )
+}
+parallax_scale = Vector2( 1, 0.5 )
+
+[node name="ParallaxContent" type="TextureRect" parent="ComicPage2/ComicPanel3/ParallaxPanelContent" index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -136.0
+margin_top = -43.0
+margin_right = 1912.0
+margin_bottom = 1503.0
+rect_scale = Vector2( 0.25, 0.25 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 10 )
+stretch_mode = 0
+script = ExtResource( 8 )
+_sections_unfolded = [ "Focus", "Hint", "Mouse", "Rect", "Size Flags", "Visibility" ]
+__meta__ = {
+"_editor_icon": ExtResource( 2 )
 }
 parallax_scale = Vector2( 1, 1 )
 

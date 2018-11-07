@@ -6,10 +6,10 @@ onready var ComicPanel = preload("panel.gd")
 
 # Internal vars
 var panels = []
-var current_panel
+var current_panel = 0
 
 # Signals
-signal ended
+signal done
 
 func _ready():
 	if get_child_count() == 0:
@@ -22,10 +22,15 @@ func _ready():
 			OS.alert("Configuration warning: ComicPage")
 			print("Configuration warning: ComicPage")
 			break
-#		p.hide()
 		panels.push_back(p)
-#	_on_ComicPanel_ended()
-	set_process(true)
+		p.connect("done", self, "_on_panel_done")
 
-func advance():
-	pass
+func play_panel():
+	if current_panel < panels.size():
+		panels[current_panel].play_content()
+	else:
+		emit_signal("done")
+
+func _on_panel_done():
+	current_panel += 1
+	play_panel()

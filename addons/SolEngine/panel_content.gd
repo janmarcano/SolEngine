@@ -62,4 +62,4 @@ func _on_tween_completed(object, key):
 		if (preview):
 			preview = false
 		else:
-			emit("done")
+			emit_signal("done")

@@ -1,4 +1,4 @@
-#tool
+tool
 extends Control
 
 export var preview = false setget _on_preview
@@ -22,7 +22,10 @@ func _ready():
 
 func init():
 	tween = Tween.new()
-	tweens_to_completion = 3
+	tweens_to_completion = 0
+	for duration in [fade_in_duration, movement_duration, scaling_duration]:
+		if duration > 0:
+			tweens_to_completion += 1
 	tween.connect("tween_completed", self, "_on_tween_completed")
 	add_child(tween)
 	modulate = Color(1, 1, 1, 0)

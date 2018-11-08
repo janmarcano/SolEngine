@@ -12,8 +12,14 @@ var pages = []
 var current_page = 0
 var is_page_playing = true
 
+func _physics_process(delta):
+	self.rect_size = get_viewport().get_visible_rect().size
+
+func _enter_tree():
+	if Engine.editor_hint:
+		set_physics_process(true)
+
 func _ready():
-	self.get_rect().size = get_viewport().get_size()
 	if not Engine.editor_hint:
 		if get_child_count() == 0:
 			OS.alert("Configuration warning: SolEngine")

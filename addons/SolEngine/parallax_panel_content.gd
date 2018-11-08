@@ -9,14 +9,6 @@ var camera
 var background
 var layers = []
 
-func _enter_tree():
-	set_clip_contents(true)
-	pass
-
-func _process(delta):
-#	camera.global_position = get_global_mouse_position()
-	pass
-
 func init():
 	.init()
 	container = ViewportContainer.new()

@@ -16,6 +16,13 @@ var tweens_to_completion
 
 signal done
 
+func _physics_process(delta):
+	self.rect_size = get_parent().rect_size
+
+func _enter_tree():
+	if Engine.editor_hint:
+		set_physics_process(true)
+
 func _ready():
 	if not Engine.editor_hint:
 		init()

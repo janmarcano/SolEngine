@@ -10,6 +10,11 @@ var background
 var layers = []
 
 func init():
+	sfx_key_dictionary = { 
+		1 : ':position',
+		2 : ':zoom',
+		3 : ':modulate'
+	}
 	.init()
 	container = ViewportContainer.new()
 	container.stretch = true

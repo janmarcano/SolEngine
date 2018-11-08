@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://addons/SolEngine/page.gd" type="Script" id=1]
 [ext_resource path="res://addons/SolEngine/icon.png" type="Texture" id=2]
@@ -6,11 +6,17 @@
 [ext_resource path="res://projects/rondo_of_blood/page_1/p1_map.png" type="Texture" id=4]
 [ext_resource path="res://addons/SolEngine/panel_content.gd" type="Script" id=5]
 [ext_resource path="res://projects/rondo_of_blood/page_1/p1_hand.png" type="Texture" id=6]
-[ext_resource path="res://projects/rondo_of_blood/page_1/p1_close-up.png" type="Texture" id=7]
-[ext_resource path="res://addons/SolEngine/parallax_panel_content.gd" type="Script" id=8]
-[ext_resource path="res://projects/rondo_of_blood/page_1/p1_chariot.png" type="Texture" id=9]
-[ext_resource path="res://addons/SolEngine/parallax_content_layer.gd" type="Script" id=10]
-[ext_resource path="res://projects/rondo_of_blood/page_1/p1_chariot_wheels.png" type="Texture" id=11]
+[ext_resource path="res://projects/rondo_of_blood/page_1/thud.wav" type="AudioStream" id=7]
+[ext_resource path="res://projects/rondo_of_blood/page_1/p1_close-up.png" type="Texture" id=8]
+[ext_resource path="res://addons/SolEngine/parallax_panel_content.gd" type="Script" id=9]
+[ext_resource path="res://projects/rondo_of_blood/page_1/p1_chariot.png" type="Texture" id=10]
+[ext_resource path="res://addons/SolEngine/parallax_content_layer.gd" type="Script" id=11]
+[ext_resource path="res://projects/rondo_of_blood/page_1/p1_chariot_wheels.png" type="Texture" id=12]
+
+[sub_resource type="AudioStreamRandomPitch" id=1]
+
+audio_stream = ExtResource( 7 )
+random_pitch = 1.25
 
 [node name="Page1" type="Control" index="0"]
 
@@ -21,6 +27,7 @@ anchor_bottom = 0.0
 margin_right = 960.0
 margin_bottom = 540.0
 rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
 mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
@@ -62,6 +69,7 @@ margin_top = -4.0
 margin_right = 248.0
 margin_bottom = 124.0
 rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
 mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
@@ -78,6 +86,9 @@ movement_duration = 0.5
 movement_relative_initial_position = Vector2( 0, 0 )
 scaling_duration = 0.25
 relative_initial_scale = Vector2( 1, 1 )
+sound_effect = null
+sound_effect_volume = 0.0
+sound_effect_play_on = null
 
 [node name="PanelContent2" type="TextureRect" parent="ComicPanel" index="1"]
 
@@ -90,6 +101,7 @@ margin_top = -6.0
 margin_right = 266.0
 margin_bottom = 114.0
 rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
 mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
@@ -101,11 +113,14 @@ __meta__ = {
 "_editor_icon": ExtResource( 2 )
 }
 preview = false
-fade_in_duration = 0.25
+fade_in_duration = 0.5
 movement_duration = 0.5
 movement_relative_initial_position = Vector2( -25, -50 )
-scaling_duration = 0.25
-relative_initial_scale = Vector2( 1, 1 )
+scaling_duration = 0.5
+relative_initial_scale = Vector2( 1.25, 1.25 )
+sound_effect = SubResource( 1 )
+sound_effect_volume = -6.0
+sound_effect_play_on = 1
 
 [node name="ComicPanel2" type="Control" parent="." index="1"]
 
@@ -139,11 +154,12 @@ margin_top = -1.0
 margin_right = 245.0
 margin_bottom = 143.0
 rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
 mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 7 )
+texture = ExtResource( 8 )
 stretch_mode = 0
 script = ExtResource( 5 )
 __meta__ = {
@@ -155,6 +171,9 @@ movement_duration = 0.5
 movement_relative_initial_position = Vector2( 0, 0 )
 scaling_duration = 0.25
 relative_initial_scale = Vector2( 1, 1 )
+sound_effect = null
+sound_effect_volume = 0.0
+sound_effect_play_on = null
 
 [node name="ComicPanel3" type="Control" parent="." index="2"]
 
@@ -190,17 +209,11 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-script = ExtResource( 8 )
+script = ExtResource( 9 )
 _sections_unfolded = [ "Visibility" ]
 __meta__ = {
 "_editor_icon": ExtResource( 2 )
 }
-preview = false
-fade_in_duration = 0.5
-movement_duration = 0.5
-movement_relative_initial_position = Vector2( 0, 0 )
-scaling_duration = 0.25
-relative_initial_scale = Vector2( 1, 1 )
 
 [node name="ParallaxContentLayer" type="TextureRect" parent="ComicPanel3/ParallaxPanelContent" index="0"]
 
@@ -213,13 +226,14 @@ margin_top = 40.0
 margin_right = 152.0
 margin_bottom = 111.0
 rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
 mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 9 )
+texture = ExtResource( 10 )
 stretch_mode = 0
-script = ExtResource( 10 )
+script = ExtResource( 11 )
 __meta__ = {
 "_editor_icon": ExtResource( 2 )
 }
@@ -228,7 +242,7 @@ parallax_scale = Vector2( 1, 1 )
 [node name="p1_chariot_wheels" type="Sprite" parent="ComicPanel3/ParallaxPanelContent/ParallaxContentLayer" index="0"]
 
 position = Vector2( 60, 70 )
-texture = ExtResource( 11 )
+texture = ExtResource( 12 )
 region_enabled = true
 region_rect = Rect2( 0, 0, 99, 33 )
 _sections_unfolded = [ "Region" ]

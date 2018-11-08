@@ -31,8 +31,6 @@ func _ready():
 				OS.alert("Configuration warning: SolEngine")
 				print("Configuration warning: SolEngine")
 				break
-			p.hide()
-			self.connect("ended", p, "_on_ComicPage_ended")
 			pages.push_back(p)
 			p.hide()
 			p.connect("done", self, "_on_page_done")

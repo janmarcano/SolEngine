@@ -10,9 +10,18 @@ export var movement_duration = 0.5
 export var movement_relative_initial_position = Vector2(0,0)
 export var scaling_duration = 0.25
 export var relative_initial_scale = Vector2(1,1)
+export(AudioStream) var sound_effect
+export var sound_effect_volume = 0.0
+export(int, "Beginning", "End of Movement", "End of Scaling", "End of Fade In") var sound_effect_play_on = 0
 
 var tween
 var tweens_to_completion
+var sfx_player
+var sfx_key_dictionary = { 
+	1 : ':rect_position',
+	2 : ':rect_scale',
+	3 : ':modulate'
+}
 
 signal done
 
@@ -28,6 +37,11 @@ func _ready():
 		init()
 
 func init():
+	if (sound_effect):
+		sfx_player = AudioStreamPlayer.new()
+		sfx_player.stream = sound_effect
+		sfx_player.volume_db = sound_effect_volume
+		add_child(sfx_player)
 	tween = Tween.new()
 	tweens_to_completion = 0
 	for duration in [fade_in_duration, movement_duration, scaling_duration]:
@@ -57,6 +71,11 @@ func position_motion():
 func opacity_motion():
 	tween.interpolate_property(self, "modulate", Color(1, 1, 1, 0), Color(1, 1, 1, 1), fade_in_duration, Tween.TRANS_SINE, Tween.EASE_OUT)
 
+func play_sound_effect(key):
+	if sfx_key_dictionary[sound_effect_play_on] == key:
+		print(sfx_player)
+		sfx_player.play()
+
 func _on_preview(_preview):
 	if _preview:
 		preview = _preview
@@ -64,6 +83,8 @@ func _on_preview(_preview):
 		motion()
 
 func _on_tween_completed(object, key):
+	if sfx_player and sound_effect_play_on:
+		play_sound_effect(key)
 	tweens_to_completion -= 1
 	if tweens_to_completion == 0:
 		if (preview):

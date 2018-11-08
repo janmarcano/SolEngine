@@ -10,8 +10,8 @@ config_version=3
 
 [application]
 
-config/name="Luminas - The Darkest Night - Prologue"
-run/main_scene="res://projects/test/test.tscn"
+config/name="SolEngine"
+run/main_scene="res://projects/rondo_of_blood/rondo_of_blood.tscn"
 config/icon="res://icon.png"
 
 [display]

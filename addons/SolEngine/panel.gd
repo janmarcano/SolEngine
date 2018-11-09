@@ -13,7 +13,7 @@ signal done
 
 func _draw():
 	if Engine.editor_hint:
-		draw_rect(Rect2(Vector2(0,0), rect_size), Color(224,111,139), false)
+		draw_rect(Rect2(Vector2(1,1), rect_size-Vector2(2,2)), Color(224,111,139), false)
 
 func _physics_process(delta):
 	update()

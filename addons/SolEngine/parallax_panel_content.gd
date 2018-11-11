@@ -1,8 +1,10 @@
 tool
 extends "panel_content.gd"
 
-const ParallaxContent = preload("parallax_content_layer.gd")
+# Class imports
+const ParallaxContentLayer = preload("parallax_content_layer.gd")
 
+# Internal vars
 var container
 var viewport
 var camera
@@ -31,9 +33,10 @@ func init():
 		layers.push_back(c)
 
 	for l in layers:
-		if l is ParallaxContent:
+		if l is ParallaxContentLayer:
 			var layer = ParallaxLayer.new()
 			layer.motion_scale = l.parallax_scale
+			layer.motion_mirroring = l.parallax_mirroring
 			if not Engine.editor_hint:
 				self.remove_child(l)
 			layer.add_child(l)

@@ -1,6 +1,5 @@
-#tool
 extends Control
 
+# Export vars
 export var parallax_scale = Vector2(1,1)
-func _ready():
-	pass
+export var parallax_mirroring = Vector2(0,0)

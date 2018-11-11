@@ -35,7 +35,6 @@ func _ready():
 
 func _draw():
 	var size = rect_size
-#	print(size)
 	draw_line(Vector2(size.x/2,0), Vector2(size.x/2,size.y), Color(0,0,0), 1.0, true)
 
 func play_panel():

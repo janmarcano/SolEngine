@@ -1,10 +1,8 @@
 tool
 extends Control
 
+# Export vars
 export var preview = false setget _on_preview
-
-#enum FadeInModes {}
-#export(FadeInModes) var fade_in_mode
 export var fade_in_duration = 0.5
 export var movement_duration = 0.5
 export var movement_relative_initial_position = Vector2(0,0)
@@ -14,6 +12,7 @@ export(AudioStream) var sound_effect
 export var sound_effect_volume = 0.0
 export(int, "Beginning", "End of Movement", "End of Scaling", "End of Fade In") var sound_effect_play_on = 0
 
+# Internal vars
 var tween
 var tweens_to_completion
 var sfx_player
@@ -23,6 +22,7 @@ var sfx_key_dictionary = {
 	3 : ':modulate'
 }
 
+# Signals
 signal done
 
 func _physics_process(delta):

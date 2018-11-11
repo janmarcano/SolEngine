@@ -28,5 +28,6 @@ enabled=PoolStringArray( "SolEngine" )
 
 [rendering]
 
+quality/2d/use_pixel_snap=true
 environment/default_clear_color=Color( 0.0980392, 0.0980392, 0.0980392, 1 )
 environment/default_environment="res://default_env.tres"

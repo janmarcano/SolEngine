@@ -52,6 +52,8 @@ func init():
 	modulate = Color(1, 1, 1, 0)
 
 func motion():
+	if sound_effect_play_on == 0:
+		sfx_player.play()
 	scale_motion()
 	position_motion()
 	opacity_motion()
@@ -73,7 +75,6 @@ func opacity_motion():
 
 func play_sound_effect(key):
 	if sfx_key_dictionary[sound_effect_play_on] == key:
-		print(sfx_player)
 		sfx_player.play()
 
 func _on_preview(_preview):

@@ -7,10 +7,10 @@ path="res://.import/horse_galloping.wav-46fd2a88ac4dceac5389df209f8099f8.sample"
 [deps]
 
 source_file="res://projects/rondo_of_blood/page_1/horse_galloping.wav"
-source_md5="5f58bf6a5d976c595c2054a8bb10cc3b"
+source_md5="060c0ccc7a439268918d77095c9eca60"
 
 dest_files=[ "res://.import/horse_galloping.wav-46fd2a88ac4dceac5389df209f8099f8.sample" ]
-dest_md5="0b903623d4a0b1c0cdd798c96d331960"
+dest_md5="3ee4a27f71f88a1d20bffe7492127778"
 
 [params]
 

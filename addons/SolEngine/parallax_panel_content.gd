@@ -30,17 +30,16 @@ func init():
 	camera.drag_margin_v_enabled = false
 	background = ParallaxBackground.new()
 	for c in get_children():
-		layers.push_back(c)
-
+		if c is ParallaxContentLayer:
+			layers.push_back(c)
 	for l in layers:
-		if l is ParallaxContentLayer:
-			var layer = ParallaxLayer.new()
-			layer.motion_scale = l.parallax_scale
-			layer.motion_mirroring = l.parallax_mirroring
-			if not Engine.editor_hint:
-				self.remove_child(l)
-			layer.add_child(l)
-			background.add_child(layer)
+		var layer = ParallaxLayer.new()
+		layer.motion_scale = l.parallax_scale
+		layer.motion_mirroring = l.parallax_mirroring
+		if not Engine.editor_hint:
+			self.remove_child(l)
+		layer.add_child(l)
+		background.add_child(layer)
 	viewport.add_child(camera)
 	viewport.add_child(background)
 	container.add_child(viewport)

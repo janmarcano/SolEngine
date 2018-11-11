@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/icon.png-487276ed1e3a0c39cad0279d744ee560.stex"
+path="res://.import/p1_grass.png-b2b6f49e6d618be4a0ed21a42f95b89f.stex"
 
 [deps]
 
-source_file="res://icon.png"
-source_md5="89fb328548d08e1aac1c805162614558"
+source_file="res://projects/rondo_of_blood/page_1/p1_grass.png"
+source_md5="f1dd637eb11e7caa2b53f6cd22760d36"
 
-dest_files=[ "res://.import/icon.png-487276ed1e3a0c39cad0279d744ee560.stex" ]
-dest_md5="38906bfb859416fc20fc2e2377cc068d"
+dest_files=[ "res://.import/p1_grass.png-b2b6f49e6d618be4a0ed21a42f95b89f.stex" ]
+dest_md5="f76c24f40d6c77a0b4081017aa98330a"
 
 [params]
 

@@ -10,7 +10,7 @@ var background
 var layers = []
 
 func init():
-	sfx_key_dictionary = { 
+	sfx_key_dictionary = {
 		1 : ':position',
 		2 : ':zoom',
 		3 : ':modulate'
@@ -42,7 +42,6 @@ func init():
 	viewport.add_child(background)
 	container.add_child(viewport)
 	add_child(container)
-	set_process(true)
 
 func scale_motion():
 	var goal_zoom = camera.zoom

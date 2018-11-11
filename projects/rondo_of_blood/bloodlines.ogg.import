@@ -1,0 +1,18 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/bloodlines.ogg-a1b0851aedd320febef11217c7764617.oggstr"
+
+[deps]
+
+source_file="res://projects/rondo_of_blood/bloodlines.ogg"
+source_md5="eca42825918a29e3edb89acc6f374adf"
+
+dest_files=[ "res://.import/bloodlines.ogg-a1b0851aedd320febef11217c7764617.oggstr" ]
+dest_md5="96c157e2b71a58612377f4ca486ffb75"
+
+[params]
+
+loop=true
+loop_offset=0

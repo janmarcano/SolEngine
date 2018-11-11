@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/icon.png-487276ed1e3a0c39cad0279d744ee560.stex"
+path="res://.import/p1_forest.png-98f1947b71dbc8f90269e8b80dc5c551.stex"
 
 [deps]
 
-source_file="res://icon.png"
-source_md5="89fb328548d08e1aac1c805162614558"
+source_file="res://projects/rondo_of_blood/page_1/p1_forest.png"
+source_md5="5c6bbff0b8b3b09a813af093d4d2d057"
 
-dest_files=[ "res://.import/icon.png-487276ed1e3a0c39cad0279d744ee560.stex" ]
-dest_md5="38906bfb859416fc20fc2e2377cc068d"
+dest_files=[ "res://.import/p1_forest.png-98f1947b71dbc8f90269e8b80dc5c551.stex" ]
+dest_md5="391cdcb34e3f1bb6b78fa001ce11744b"
 
 [params]
 

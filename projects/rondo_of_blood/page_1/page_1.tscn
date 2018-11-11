@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://addons/SolEngine/page.gd" type="Script" id=1]
 [ext_resource path="res://addons/SolEngine/icon.png" type="Texture" id=2]
@@ -9,16 +9,19 @@
 [ext_resource path="res://projects/rondo_of_blood/page_1/thud.wav" type="AudioStream" id=7]
 [ext_resource path="res://projects/rondo_of_blood/page_1/p1_close-up.png" type="Texture" id=8]
 [ext_resource path="res://addons/SolEngine/parallax_panel_content.gd" type="Script" id=9]
-[ext_resource path="res://projects/rondo_of_blood/page_1/p1_chariot.png" type="Texture" id=10]
+[ext_resource path="res://projects/rondo_of_blood/page_1/p1_forest.png" type="Texture" id=10]
 [ext_resource path="res://addons/SolEngine/parallax_content_layer.gd" type="Script" id=11]
-[ext_resource path="res://projects/rondo_of_blood/page_1/p1_chariot_wheels.png" type="Texture" id=12]
+[ext_resource path="res://projects/rondo_of_blood/page_1/p1_chariot.png" type="Texture" id=12]
+[ext_resource path="res://projects/rondo_of_blood/page_1/p1_chariot_wheels.png" type="Texture" id=13]
+[ext_resource path="res://projects/rondo_of_blood/page_1/p1_horses.png" type="Texture" id=14]
+[ext_resource path="res://projects/rondo_of_blood/page_1/p1_grass.png" type="Texture" id=15]
 
 [sub_resource type="AudioStreamRandomPitch" id=1]
 
 audio_stream = ExtResource( 7 )
 random_pitch = 1.25
 
-[node name="Page1" type="Control" index="0"]
+[node name="Page1" type="Control"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -27,7 +30,6 @@ anchor_bottom = 0.0
 margin_right = 960.0
 margin_bottom = 540.0
 rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
 mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
@@ -69,7 +71,6 @@ margin_top = -4.0
 margin_right = 248.0
 margin_bottom = 124.0
 rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
 mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
@@ -101,7 +102,6 @@ margin_top = -6.0
 margin_right = 266.0
 margin_bottom = 114.0
 rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
 mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
@@ -154,7 +154,6 @@ margin_top = -1.0
 margin_right = 245.0
 margin_bottom = 143.0
 rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
 mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
@@ -214,24 +213,53 @@ _sections_unfolded = [ "Visibility" ]
 __meta__ = {
 "_editor_icon": ExtResource( 2 )
 }
+preview = false
+fade_in_duration = 0.5
+movement_duration = 1.5
+movement_relative_initial_position = Vector2( -100, -50 )
+scaling_duration = 1.5
+relative_initial_scale = Vector2( 1.25, 1.25 )
+sound_effect = null
+sound_effect_volume = 0.0
+sound_effect_play_on = 0
 
-[node name="ParallaxContentLayer" type="TextureRect" parent="ComicPanel3/ParallaxPanelContent" index="0"]
+[node name="ParallaxContentLayer3" type="TextureRect" parent="ComicPanel3/ParallaxPanelContent" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 20.0
-margin_top = 40.0
-margin_right = 152.0
-margin_bottom = 111.0
+margin_right = 480.0
+margin_bottom = 119.0
 rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
 mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 texture = ExtResource( 10 )
+stretch_mode = 2
+script = ExtResource( 11 )
+__meta__ = {
+"_editor_icon": ExtResource( 2 )
+}
+parallax_scale = Vector2( 1, 1 )
+
+[node name="ParallaxContentLayer" type="TextureRect" parent="ComicPanel3/ParallaxPanelContent" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 110.0
+margin_top = 40.0
+margin_right = 242.0
+margin_bottom = 111.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 12 )
 stretch_mode = 0
 script = ExtResource( 11 )
 __meta__ = {
@@ -242,9 +270,39 @@ parallax_scale = Vector2( 1, 1 )
 [node name="p1_chariot_wheels" type="Sprite" parent="ComicPanel3/ParallaxPanelContent/ParallaxContentLayer" index="0"]
 
 position = Vector2( 60, 70 )
-texture = ExtResource( 12 )
+texture = ExtResource( 13 )
 region_enabled = true
 region_rect = Rect2( 0, 0, 99, 33 )
 _sections_unfolded = [ "Region" ]
+
+[node name="p1_horses" type="Sprite" parent="ComicPanel3/ParallaxPanelContent/ParallaxContentLayer" index="1"]
+
+position = Vector2( 177, 51 )
+texture = ExtResource( 14 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 134, 69 )
+_sections_unfolded = [ "Region" ]
+
+[node name="ParallaxContentLayer2" type="TextureRect" parent="ComicPanel3/ParallaxPanelContent" index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 110.0
+margin_right = 480.0
+margin_bottom = 151.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 15 )
+stretch_mode = 2
+script = ExtResource( 11 )
+__meta__ = {
+"_editor_icon": ExtResource( 2 )
+}
+parallax_scale = Vector2( 1, 1 )
 
 

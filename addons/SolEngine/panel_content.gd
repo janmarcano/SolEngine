@@ -17,7 +17,7 @@ export(int, "Beginning", "End of Movement", "End of Scaling", "End of Fade In") 
 var tween
 var tweens_to_completion
 var sfx_player
-var sfx_key_dictionary = { 
+var sfx_key_dictionary = {
 	1 : ':rect_position',
 	2 : ':rect_scale',
 	3 : ':modulate'

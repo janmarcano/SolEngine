@@ -7,7 +7,10 @@ path="res://.import/thud.wav-1827fb7cc859c0a937084b09af6e4a83.sample"
 [deps]
 
 source_file="res://projects/rondo_of_blood/page_1/thud.wav"
+source_md5="ef73849262baf7ecd8531424b4fae8b5"
+
 dest_files=[ "res://.import/thud.wav-1827fb7cc859c0a937084b09af6e4a83.sample" ]
+dest_md5="136fbb2d6145d758d3798dd5213b6019"
 
 [params]
 

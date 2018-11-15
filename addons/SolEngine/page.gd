@@ -5,6 +5,9 @@ extends Control
 onready var ComicPanel = preload("panel.gd")
 
 # Export vars
+export(Color) var background_color = Color(255, 255, 255) setget _on_background_color_change
+export(Color) var layout_color = Color(0, 0, 0) setget _on_layout_color_change
+export var page_padding = 20
 export(AudioStream) var background_music
 export var silence_background_music = false
 
@@ -39,8 +42,15 @@ func _ready():
 			p.connect("done", self, "_on_panel_done")
 
 func _draw():
-	var size = rect_size
-	draw_line(Vector2(size.x/2,0), Vector2(size.x/2,size.y), Color(0,0,0), 1.0, true)
+	draw_rect(get_rect(), background_color)
+	if Engine.editor_hint:
+		var size = rect_size
+		size.x /= 2
+		draw_line(Vector2(size.x,0), Vector2(size.x,size.y), layout_color, 2.0, true)
+		var page_rect = Rect2(Vector2(page_padding,page_padding), size-Vector2(page_padding*2,page_padding*2))
+		draw_rect(page_rect, layout_color, false)
+		page_rect = Rect2(Vector2(size.x+page_padding,page_padding), size-Vector2(page_padding*2,page_padding*2))
+		draw_rect(page_rect, layout_color, false)
 
 func start_page():
 	if background_music or silence_background_music:
@@ -58,3 +68,11 @@ func play_panel():
 func _on_panel_done():
 	current_panel += 1
 	play_panel()
+
+func _on_background_color_change(_color):
+	background_color = _color
+	update()
+
+func _on_layout_color_change(_color):
+	layout_color = _color
+	update()

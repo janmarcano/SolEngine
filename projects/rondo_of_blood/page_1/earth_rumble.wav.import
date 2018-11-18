@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/earth_rumble.wav-cef4611f0018866c0b80d3a21462aea7.sample"
+
+[deps]
+
+source_file="res://projects/rondo_of_blood/page_1/earth_rumble.wav"
+source_md5="fdd402853005d23ae7a5ee67313b891b"
+
+dest_files=[ "res://.import/earth_rumble.wav-cef4611f0018866c0b80d3a21462aea7.sample" ]
+dest_md5="34691d96a3a913b96356366de89c9a3d"
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/thunder.wav-169995be17d43040e9db2fcaf36c4857.sample"
+
+[deps]
+
+source_file="res://projects/rondo_of_blood/page_1/thunder.wav"
+source_md5="69ffffb6b8596fd066204b2681e35c47"
+
+dest_files=[ "res://.import/thunder.wav-169995be17d43040e9db2fcaf36c4857.sample" ]
+dest_md5="046eb5b2d8f2b5ec0328e24286726c4c"
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

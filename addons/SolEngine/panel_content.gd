@@ -26,7 +26,11 @@ var sfx_key_dictionary = {
 signal done
 
 func _physics_process(delta):
-	self.rect_size = get_parent().rect_size
+	if self is TextureRect and self.texture != null:
+		self.rect_size = get_texture().get_size()
+		self.rect_pivot_offset = get_texture().get_size()/2
+	else:
+		self.rect_size = get_parent().rect_size
 
 func _enter_tree():
 	if Engine.editor_hint:
@@ -52,7 +56,7 @@ func init():
 	modulate = Color(1, 1, 1, 0)
 
 func motion():
-	if sound_effect_play_on == 0:
+	if sound_effect and sound_effect_play_on == 0:
 		sfx_player.play()
 	scale_motion()
 	position_motion()

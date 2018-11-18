@@ -12,11 +12,11 @@ func _enter_tree():
 	pass
 
 func _exit_tree():
-	remove_custom_type("SolEngine")
-	remove_custom_type("ComicPage")
-	remove_custom_type("ComicPanel")
-	remove_custom_type("PanelContent")
-	remove_custom_type("ParallaxPanelContent")
-	remove_custom_type("ParallaxContentLayer")
 	remove_custom_type("SpeechBubble")
+	remove_custom_type("ParallaxContentLayer")
+	remove_custom_type("ParallaxPanelContent")
+	remove_custom_type("PanelContent")
+	remove_custom_type("ComicPanel")
+	remove_custom_type("ComicPage")
+	remove_custom_type("SolEngine")
 	pass

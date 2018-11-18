@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/p1_castle.png-86391c36cfcb7ab7a8057a49fad58ffa.stex"
+path="res://.import/p1_graveyard.png-a6d598f8bebfccf9f5a6ac2dfd0709b1.stex"
 
 [deps]
 
-source_file="res://projects/rondo_of_blood/page_1/p1_castle.png"
-source_md5="f40ce4acf26d4cb48ed0e8c4a1e9bf57"
+source_file="res://projects/rondo_of_blood/page_1/p1_graveyard.png"
+source_md5="237c6249211bb5c94c966bd8e84a0780"
 
-dest_files=[ "res://.import/p1_castle.png-86391c36cfcb7ab7a8057a49fad58ffa.stex" ]
-dest_md5="6851e8a65cbacfb4882cc59935c06509"
+dest_files=[ "res://.import/p1_graveyard.png-a6d598f8bebfccf9f5a6ac2dfd0709b1.stex" ]
+dest_md5="d2ba72f1b94d73b72a5b2e7588efbc6a"
 
 [params]
 

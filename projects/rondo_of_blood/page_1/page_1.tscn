@@ -1,27 +1,29 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://addons/SolEngine/page.gd" type="Script" id=1]
 [ext_resource path="res://addons/SolEngine/icon.png" type="Texture" id=2]
-[ext_resource path="res://addons/SolEngine/panel.gd" type="Script" id=3]
-[ext_resource path="res://projects/rondo_of_blood/page_1/p1_map.png" type="Texture" id=4]
-[ext_resource path="res://addons/SolEngine/panel_content.gd" type="Script" id=5]
-[ext_resource path="res://projects/rondo_of_blood/page_1/p1_hand.png" type="Texture" id=6]
-[ext_resource path="res://projects/rondo_of_blood/page_1/thud.wav" type="AudioStream" id=7]
-[ext_resource path="res://projects/rondo_of_blood/page_1/p1_close-up.png" type="Texture" id=8]
-[ext_resource path="res://addons/SolEngine/parallax_panel_content.gd" type="Script" id=9]
-[ext_resource path="res://projects/rondo_of_blood/page_1/horse_galloping.wav" type="AudioStream" id=10]
-[ext_resource path="res://addons/SolEngine/parallax_content_layer.gd" type="Script" id=11]
-[ext_resource path="res://projects/rondo_of_blood/page_1/p1_moon.png" type="Texture" id=12]
-[ext_resource path="res://projects/rondo_of_blood/page_1/p1_forest.png" type="Texture" id=13]
-[ext_resource path="res://projects/rondo_of_blood/page_1/p1_chariot.png" type="Texture" id=14]
-[ext_resource path="res://projects/rondo_of_blood/page_1/p1_chariot_wheels.png" type="Texture" id=15]
-[ext_resource path="res://projects/rondo_of_blood/page_1/p1_horses.png" type="Texture" id=16]
-[ext_resource path="res://projects/rondo_of_blood/page_1/p1_grass.png" type="Texture" id=17]
-
-[sub_resource type="AudioStreamRandomPitch" id=1]
-
-audio_stream = ExtResource( 7 )
-random_pitch = 1.25
+[ext_resource path="res://projects/rondo_of_blood/bloodlines.ogg" type="AudioStream" id=3]
+[ext_resource path="res://addons/SolEngine/panel.gd" type="Script" id=4]
+[ext_resource path="res://projects/rondo_of_blood/page_1/p1_map.png" type="Texture" id=5]
+[ext_resource path="res://addons/SolEngine/panel_content.gd" type="Script" id=6]
+[ext_resource path="res://projects/rondo_of_blood/page_1/p1_hand.png" type="Texture" id=7]
+[ext_resource path="res://projects/rondo_of_blood/page_1/thud.wav" type="AudioStream" id=8]
+[ext_resource path="res://projects/rondo_of_blood/page_1/p1_close-up.png" type="Texture" id=9]
+[ext_resource path="res://addons/SolEngine/parallax_panel_content.gd" type="Script" id=10]
+[ext_resource path="res://projects/rondo_of_blood/page_1/horse_galloping.wav" type="AudioStream" id=11]
+[ext_resource path="res://addons/SolEngine/parallax_content_layer.gd" type="Script" id=12]
+[ext_resource path="res://projects/rondo_of_blood/page_1/p1_moon.png" type="Texture" id=13]
+[ext_resource path="res://projects/rondo_of_blood/page_1/p1_forest.png" type="Texture" id=14]
+[ext_resource path="res://projects/rondo_of_blood/page_1/p1_chariot.png" type="Texture" id=15]
+[ext_resource path="res://projects/rondo_of_blood/page_1/p1_chariot_wheels.png" type="Texture" id=16]
+[ext_resource path="res://projects/rondo_of_blood/page_1/p1_horses.png" type="Texture" id=17]
+[ext_resource path="res://projects/rondo_of_blood/page_1/p1_grass.png" type="Texture" id=18]
+[ext_resource path="res://projects/rondo_of_blood/page_1/p1_castle.png" type="Texture" id=19]
+[ext_resource path="res://projects/rondo_of_blood/page_1/p1_thunder.png" type="Texture" id=20]
+[ext_resource path="res://projects/rondo_of_blood/page_1/thunder.wav" type="AudioStream" id=21]
+[ext_resource path="res://projects/rondo_of_blood/page_1/p1_graveyard.png" type="Texture" id=22]
+[ext_resource path="res://projects/rondo_of_blood/page_1/p1_skeletons.png" type="Texture" id=23]
+[ext_resource path="res://projects/rondo_of_blood/page_1/earth_rumble.wav" type="AudioStream" id=24]
 
 [node name="Page1" type="Control" index="0"]
 
@@ -42,21 +44,22 @@ __meta__ = {
 "_edit_lock_": true,
 "_editor_icon": ExtResource( 2 )
 }
-background_color = Color( 1, 0.257813, 0.257813, 1 )
+background_color = Color( 0.117647, 0, 0, 1 )
 layout_color = Color( 0, 0, 0, 1 )
 page_padding = 20
-background_music = null
+background_music = ExtResource( 3 )
 silence_background_music = false
 
 [node name="ComicPanel" type="Control" parent="." index="0"]
 
+editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 20.0
 margin_top = 20.0
-margin_right = 230.0
+margin_right = 250.0
 margin_bottom = 140.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = true
@@ -64,12 +67,13 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-script = ExtResource( 3 )
+script = ExtResource( 4 )
 _sections_unfolded = [ "Rect" ]
 __meta__ = {
 "_edit_group_": true,
 "_editor_icon": ExtResource( 2 )
 }
+delay_before_next_panel = 1.0
 
 [node name="PanelContent" type="TextureRect" parent="ComicPanel" index="0"]
 
@@ -77,18 +81,18 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = -20.0
-margin_top = -8.0
-margin_right = 236.0
-margin_bottom = 120.0
-rect_pivot_offset = Vector2( 0, 0 )
+margin_left = -13.0
+margin_top = -3.0
+margin_right = 243.0
+margin_bottom = 125.0
+rect_pivot_offset = Vector2( 128, 64 )
 mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 4 )
+texture = ExtResource( 5 )
 stretch_mode = 0
-script = ExtResource( 5 )
+script = ExtResource( 6 )
 __meta__ = {
 "_editor_icon": ExtResource( 2 )
 }
@@ -100,7 +104,7 @@ scaling_duration = 0.25
 relative_initial_scale = Vector2( 1, 1 )
 sound_effect = null
 sound_effect_volume = 0.0
-sound_effect_play_on = null
+sound_effect_play_on = 0
 
 [node name="PanelContent2" type="TextureRect" parent="ComicPanel" index="1"]
 
@@ -108,18 +112,18 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 12.0
+margin_left = 30.0
 margin_top = -10.0
-margin_right = 222.0
-margin_bottom = 110.0
-rect_pivot_offset = Vector2( 0, 0 )
+margin_right = 189.0
+margin_bottom = 102.0
+rect_pivot_offset = Vector2( 79.5, 56 )
 mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 6 )
+texture = ExtResource( 7 )
 stretch_mode = 0
-script = ExtResource( 5 )
+script = ExtResource( 6 )
 __meta__ = {
 "_editor_icon": ExtResource( 2 )
 }
@@ -129,7 +133,7 @@ movement_duration = 0.5
 movement_relative_initial_position = Vector2( -25, -50 )
 scaling_duration = 0.5
 relative_initial_scale = Vector2( 1.25, 1.25 )
-sound_effect = SubResource( 1 )
+sound_effect = ExtResource( 8 )
 sound_effect_volume = 6.0
 sound_effect_play_on = 1
 
@@ -140,7 +144,7 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 240.0
+margin_left = 260.0
 margin_top = 20.0
 margin_right = 460.0
 margin_bottom = 140.0
@@ -150,12 +154,12 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-script = ExtResource( 3 )
-_sections_unfolded = [ "Rect", "Visibility" ]
+script = ExtResource( 4 )
 __meta__ = {
 "_edit_group_": true,
 "_editor_icon": ExtResource( 2 )
 }
+delay_before_next_panel = 0.5
 
 [node name="PanelContent" type="TextureRect" parent="ComicPanel2" index="0"]
 
@@ -167,26 +171,26 @@ margin_left = -11.0
 margin_top = -1.0
 margin_right = 245.0
 margin_bottom = 143.0
-rect_pivot_offset = Vector2( 0, 0 )
+rect_pivot_offset = Vector2( 128, 72 )
 mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 8 )
+texture = ExtResource( 9 )
 stretch_mode = 0
-script = ExtResource( 5 )
+script = ExtResource( 6 )
 __meta__ = {
 "_editor_icon": ExtResource( 2 )
 }
 preview = false
 fade_in_duration = 0.5
 movement_duration = 0.5
-movement_relative_initial_position = Vector2( 0, 0 )
+movement_relative_initial_position = Vector2( -20, 0 )
 scaling_duration = 0.25
 relative_initial_scale = Vector2( 1, 1 )
 sound_effect = null
 sound_effect_volume = 0.0
-sound_effect_play_on = null
+sound_effect_play_on = 0
 
 [node name="ComicPanel3" type="Control" parent="." index="2"]
 
@@ -204,11 +208,12 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-script = ExtResource( 3 )
+script = ExtResource( 4 )
 __meta__ = {
 "_edit_group_": true,
 "_editor_icon": ExtResource( 2 )
 }
+delay_before_next_panel = 0.5
 
 [node name="ParallaxPanelContent" type="Control" parent="ComicPanel3" index="0"]
 
@@ -224,7 +229,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-script = ExtResource( 9 )
+script = ExtResource( 10 )
 _sections_unfolded = [ "Rect", "Visibility" ]
 __meta__ = {
 "_editor_icon": ExtResource( 2 )
@@ -235,7 +240,7 @@ movement_duration = 3.0
 movement_relative_initial_position = Vector2( 300, -100 )
 scaling_duration = 3.0
 relative_initial_scale = Vector2( 1.25, 1.25 )
-sound_effect = ExtResource( 10 )
+sound_effect = ExtResource( 11 )
 sound_effect_volume = 4.0
 sound_effect_play_on = 0
 
@@ -253,7 +258,7 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 stretch_mode = 0
-script = ExtResource( 11 )
+script = ExtResource( 12 )
 __meta__ = {
 "_editor_icon": ExtResource( 2 )
 }
@@ -291,9 +296,9 @@ mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 12 )
+texture = ExtResource( 13 )
 stretch_mode = 0
-script = ExtResource( 11 )
+script = ExtResource( 12 )
 __meta__ = {
 "_editor_icon": ExtResource( 2 )
 }
@@ -314,9 +319,9 @@ mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 13 )
+texture = ExtResource( 14 )
 stretch_mode = 2
-script = ExtResource( 11 )
+script = ExtResource( 12 )
 _sections_unfolded = [ "Rect" ]
 __meta__ = {
 "_editor_icon": ExtResource( 2 )
@@ -324,7 +329,7 @@ __meta__ = {
 parallax_scale = Vector2( 1, 0.85 )
 parallax_mirroring = Vector2( 128, 0 )
 
-[node name="Carvan" type="TextureRect" parent="ComicPanel3/ParallaxPanelContent" index="3"]
+[node name="Caravan" type="TextureRect" parent="ComicPanel3/ParallaxPanelContent" index="3"]
 
 editor/display_folded = true
 anchor_left = 0.0
@@ -340,27 +345,27 @@ mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 14 )
+texture = ExtResource( 15 )
 stretch_mode = 0
-script = ExtResource( 11 )
+script = ExtResource( 12 )
 __meta__ = {
 "_editor_icon": ExtResource( 2 )
 }
 parallax_scale = Vector2( 2, 1 )
 parallax_mirroring = Vector2( 0, 0 )
 
-[node name="p1_chariot_wheels" type="Sprite" parent="ComicPanel3/ParallaxPanelContent/Carvan" index="0"]
+[node name="p1_chariot_wheels" type="Sprite" parent="ComicPanel3/ParallaxPanelContent/Caravan" index="0"]
 
 position = Vector2( 60, 70 )
-texture = ExtResource( 15 )
+texture = ExtResource( 16 )
 region_enabled = true
 region_rect = Rect2( 0, 0, 99, 33 )
 _sections_unfolded = [ "Region" ]
 
-[node name="p1_horses" type="Sprite" parent="ComicPanel3/ParallaxPanelContent/Carvan" index="1"]
+[node name="p1_horses" type="Sprite" parent="ComicPanel3/ParallaxPanelContent/Caravan" index="1"]
 
 position = Vector2( 177, 51 )
-texture = ExtResource( 16 )
+texture = ExtResource( 17 )
 region_enabled = true
 region_rect = Rect2( 0, 0, 134, 69 )
 _sections_unfolded = [ "Region" ]
@@ -379,13 +384,238 @@ mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 stretch_mode = 2
-script = ExtResource( 11 )
+script = ExtResource( 12 )
 __meta__ = {
 "_editor_icon": ExtResource( 2 )
 }
 parallax_scale = Vector2( 5, 1.15 )
 parallax_mirroring = Vector2( 326, 0 )
+
+[node name="ComicPanel4" type="Control" parent="." index="3"]
+
+editor/display_folded = true
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 20.0
+margin_top = 350.0
+margin_right = 210.0
+margin_bottom = 520.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = true
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+script = ExtResource( 4 )
+_sections_unfolded = [ "Rect" ]
+__meta__ = {
+"_edit_group_": true,
+"_editor_icon": ExtResource( 2 )
+}
+delay_before_next_panel = 0.5
+
+[node name="PanelContent" type="TextureRect" parent="ComicPanel4" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -47.0
+margin_top = 24.0
+margin_right = 19.0
+margin_bottom = -18.0
+rect_scale = Vector2( 1.5, 1.5 )
+rect_pivot_offset = Vector2( 128, 64 )
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 19 )
+stretch_mode = 0
+script = ExtResource( 6 )
+_sections_unfolded = [ "Rect" ]
+__meta__ = {
+"_editor_icon": ExtResource( 2 )
+}
+preview = false
+fade_in_duration = 0.5
+movement_duration = 0.5
+movement_relative_initial_position = Vector2( 0, 0 )
+scaling_duration = 0.25
+relative_initial_scale = Vector2( 1, 1 )
+sound_effect = null
+sound_effect_volume = 0.0
+sound_effect_play_on = 0
+
+[node name="PanelContent2" type="TextureRect" parent="ComicPanel4" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 46.0
+margin_top = 15.0
+margin_right = 141.0
+margin_bottom = 66.0
+rect_scale = Vector2( 1.6, 1.6 )
+rect_pivot_offset = Vector2( 47.5, 25.5 )
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 20 )
+stretch_mode = 0
+script = ExtResource( 6 )
+_sections_unfolded = [ "Rect" ]
+__meta__ = {
+"_editor_icon": ExtResource( 2 )
+}
+preview = false
+fade_in_duration = 0.5
+movement_duration = 0.5
+movement_relative_initial_position = Vector2( 0, -20 )
+scaling_duration = 0.5
+relative_initial_scale = Vector2( 0.8, 0.8 )
+sound_effect = ExtResource( 21 )
+sound_effect_volume = 0.0
+sound_effect_play_on = 0
+
+[node name="ComicPanel5" type="Control" parent="." index="4"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 220.0
+margin_top = 350.0
+margin_right = 460.0
+margin_bottom = 520.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = true
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_group_": true,
+"_editor_icon": ExtResource( 2 )
+}
+delay_before_next_panel = 1.0
+
+[node name="PanelContent" type="TextureRect" parent="ComicPanel5" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -7.0
+margin_top = 13.0
+margin_right = 249.0
+margin_bottom = 157.0
+rect_scale = Vector2( 1.2, 1.2 )
+rect_pivot_offset = Vector2( 128, 72 )
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 22 )
+stretch_mode = 0
+script = ExtResource( 6 )
+_sections_unfolded = [ "Rect" ]
+__meta__ = {
+"_editor_icon": ExtResource( 2 )
+}
+preview = false
+fade_in_duration = 0.5
+movement_duration = 0.5
+movement_relative_initial_position = Vector2( 0, 0 )
+scaling_duration = 0.25
+relative_initial_scale = Vector2( 1, 1 )
+sound_effect = null
+sound_effect_volume = 0.0
+sound_effect_play_on = 0
+
+[node name="PanelContent2" type="TextureRect" parent="ComicPanel5" index="1"]
+
+editor/display_folded = true
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 240.0
+margin_bottom = 170.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+stretch_mode = 0
+script = ExtResource( 6 )
+_sections_unfolded = [ "Rect" ]
+__meta__ = {
+"_editor_icon": ExtResource( 2 )
+}
+preview = false
+fade_in_duration = 1.0
+movement_duration = 0.5
+movement_relative_initial_position = Vector2( 0, 0 )
+scaling_duration = 0.25
+relative_initial_scale = Vector2( 1, 1 )
+sound_effect = null
+sound_effect_volume = 0.0
+sound_effect_play_on = 0
+
+[node name="Polygon2D" type="Polygon2D" parent="ComicPanel5/PanelContent2" index="0"]
+
+polygon = PoolVector2Array( 0, 0, 260, 0, 260, 170, 0, 170 )
+uv = PoolVector2Array(  )
+color = Color( 0.552941, 0, 0.552941, 0.314941 )
+vertex_colors = PoolColorArray(  )
+offset = Vector2( 0, 0 )
+antialiased = false
+texture = null
+texture_offset = Vector2( 0, 0 )
+texture_scale = Vector2( 1, 1 )
+texture_rotation_degrees = 0.0
+invert_enable = false
+invert_border = 100.0
+
+[node name="PanelContent3" type="TextureRect" parent="ComicPanel5" index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 31.0
+margin_top = 33.0
+margin_right = 200.0
+margin_bottom = 161.0
+rect_scale = Vector2( 1.2, 1.2 )
+rect_pivot_offset = Vector2( 84.5, 64 )
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 23 )
+stretch_mode = 0
+script = ExtResource( 6 )
+_sections_unfolded = [ "Rect" ]
+__meta__ = {
+"_editor_icon": ExtResource( 2 )
+}
+preview = false
+fade_in_duration = 0.75
+movement_duration = 1.5
+movement_relative_initial_position = Vector2( 0, 100 )
+scaling_duration = 0.25
+relative_initial_scale = Vector2( 1, 1 )
+sound_effect = ExtResource( 24 )
+sound_effect_volume = 0.0
+sound_effect_play_on = 0
 
 

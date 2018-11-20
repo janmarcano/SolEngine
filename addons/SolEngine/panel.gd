@@ -5,7 +5,7 @@ extends Control
 onready var PanelContent = preload("panel_content.gd")
 
 # Export vars
-export var delay_before_next_panel = 0.5
+export var delay_before_starting = 0.5
 
 # Internal vars
 var contents = []
@@ -43,19 +43,22 @@ func _ready():
 			c.connect("done", self, "_on_content_done")
 		timer = Timer.new()
 		timer.one_shot = true
-		timer.wait_time = delay_before_next_panel
+		timer.wait_time = delay_before_starting
 		timer.connect("timeout", self, "_on_Timer_delay_timeout")
 		add_child(timer)
+
+func start_content():
+	timer.start()
 
 func play_content():
 	if current_content < contents.size():
 		contents[current_content].motion()
 	else:
-		timer.start()
+		emit_signal("done")
 
 func _on_content_done():
 	current_content += 1
 	play_content()
 
 func _on_Timer_delay_timeout():
-	emit_signal("done")
+	play_content()

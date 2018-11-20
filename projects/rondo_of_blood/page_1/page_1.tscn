@@ -46,13 +46,13 @@ __meta__ = {
 }
 background_color = Color( 0.117647, 0, 0, 1 )
 layout_color = Color( 0, 0, 0, 1 )
+visible_page_separator = true
 page_padding = 20
 background_music = ExtResource( 3 )
 silence_background_music = false
 
 [node name="ComicPanel" type="Control" parent="." index="0"]
 
-editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -73,7 +73,7 @@ __meta__ = {
 "_edit_group_": true,
 "_editor_icon": ExtResource( 2 )
 }
-delay_before_next_panel = 1.0
+delay_before_starting = 1.0
 
 [node name="PanelContent" type="TextureRect" parent="ComicPanel" index="0"]
 
@@ -159,7 +159,7 @@ __meta__ = {
 "_edit_group_": true,
 "_editor_icon": ExtResource( 2 )
 }
-delay_before_next_panel = 0.5
+delay_before_starting = 0.5
 
 [node name="PanelContent" type="TextureRect" parent="ComicPanel2" index="0"]
 
@@ -194,7 +194,6 @@ sound_effect_play_on = 0
 
 [node name="ComicPanel3" type="Control" parent="." index="2"]
 
-editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -213,7 +212,7 @@ __meta__ = {
 "_edit_group_": true,
 "_editor_icon": ExtResource( 2 )
 }
-delay_before_next_panel = 0.5
+delay_before_starting = 0.5
 
 [node name="ParallaxPanelContent" type="Control" parent="ComicPanel3" index="0"]
 
@@ -241,8 +240,8 @@ movement_relative_initial_position = Vector2( 300, -100 )
 scaling_duration = 3.0
 relative_initial_scale = Vector2( 1.25, 1.25 )
 sound_effect = ExtResource( 11 )
-sound_effect_volume = 4.0
-sound_effect_play_on = 0
+sound_effect_volume = 6.0
+sound_effect_play_on = 3
 
 [node name="Black" type="TextureRect" parent="ComicPanel3/ParallaxPanelContent" index="0"]
 
@@ -416,7 +415,7 @@ __meta__ = {
 "_edit_group_": true,
 "_editor_icon": ExtResource( 2 )
 }
-delay_before_next_panel = 0.5
+delay_before_starting = 0.5
 
 [node name="PanelContent" type="TextureRect" parent="ComicPanel4" index="0"]
 
@@ -505,7 +504,7 @@ __meta__ = {
 "_edit_group_": true,
 "_editor_icon": ExtResource( 2 )
 }
-delay_before_next_panel = 1.0
+delay_before_starting = 1.0
 
 [node name="PanelContent" type="TextureRect" parent="ComicPanel5" index="0"]
 

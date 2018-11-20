@@ -31,6 +31,7 @@ func _enter_tree():
 
 func _ready():
 	if not Engine.editor_hint:
+		set_anchors_preset(PRESET_CENTER)
 		bgm_player = AudioStreamPlayer.new()
 		bgm_player.volume_db = MAX_BGM_VOLUME
 		tween = Tween.new()

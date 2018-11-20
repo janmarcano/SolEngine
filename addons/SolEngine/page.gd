@@ -7,6 +7,7 @@ onready var ComicPanel = preload("panel.gd")
 # Export vars
 export(Color) var background_color = Color(255, 255, 255) setget _on_background_color_change
 export(Color) var layout_color = Color(0, 0, 0) setget _on_layout_color_change
+export var visible_page_separator = true
 export var page_padding = 20
 export(AudioStream) var background_music
 export var silence_background_music = false
@@ -14,6 +15,7 @@ export var silence_background_music = false
 # Internal vars
 var panels = []
 var current_panel = 0
+onready var rect = get_rect()
 
 # Signals
 signal done
@@ -42,15 +44,18 @@ func _ready():
 			p.connect("done", self, "_on_panel_done")
 
 func _draw():
-	draw_rect(get_rect(), background_color)
+	if not rect:
+		rect = get_rect()
+	draw_rect(rect, background_color)
+	var size = rect_size
 	if Engine.editor_hint:
-		var size = rect_size
 		size.x /= 2
-		draw_line(Vector2(size.x,0), Vector2(size.x,size.y), layout_color, 2.0, true)
 		var page_rect = Rect2(Vector2(page_padding,page_padding), size-Vector2(page_padding*2,page_padding*2))
 		draw_rect(page_rect, layout_color, false)
 		page_rect = Rect2(Vector2(size.x+page_padding,page_padding), size-Vector2(page_padding*2,page_padding*2))
 		draw_rect(page_rect, layout_color, false)
+	if visible_page_separator or Engine.editor_hint:
+		draw_line(Vector2(size.x,0), Vector2(size.x,size.y), layout_color, 2.0, true)
 
 func start_page():
 	if background_music or silence_background_music:
@@ -61,7 +66,7 @@ func start_page():
 
 func play_panel():
 	if current_panel < panels.size():
-		panels[current_panel].play_content()
+		panels[current_panel].start_content()
 	else:
 		emit_signal("done")
 
